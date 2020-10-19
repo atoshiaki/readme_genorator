@@ -46,41 +46,41 @@ inquirer
     //   ]
     // },
     {
-    type: "input",
-    name: "Profile",
-    message: "What is your github name?"
-    },
-    // {
-    // type: "input",
-    // name: "email",
-    // message: "What is your email?"
-    // },
-       
-  ])
-  .then(answers => {
-    // Use user feedback for... whatever!!
-    console.log(answers)
-    //creat readme file
-
-    fs.writeFile("readme_render.md", null, function(err) {
-  
-      if (err) {
-        console.log("fail!");
-        return console.log(err);
-
-      }
-        console.log("Success!");
-    });
-
-  })
-  .catch(error => {
-    if(error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
-      console.log("Prompt couldn't be rendered in the current environment");
-
-    } else {
-      // Something else when wrong
-      console.log("something else failed");
-
-    }
-  });
+        type: "input",
+        name: "Profile",
+        message: "What is your github name?"
+        },
+        // {
+        // type: "input",
+        // name: "email",
+        // message: "What is your email?"
+        // },
+           
+      ])
+      .then(answers => {
+        // Use user feedback for... whatever!!
+        console.log(answers)
+        //creat readme file
+    
+        fs.writeFile("readme_render.md", null, function(err) {
+      
+          if (err) {
+            console.log("fail!");
+            return console.log(err);
+    
+          }
+            console.log("Success!");
+        });
+    
+      })
+      .catch(error => {
+        if(error.isError) {
+          // Prompt couldn't be rendered in the current environment
+          console.log("Prompt couldn't be rendered in the current environment");
+    
+        } else {
+          // Something else when wrong
+          console.log("something else failed");
+    
+        }
+      });
